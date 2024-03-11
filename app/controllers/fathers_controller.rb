@@ -1,5 +1,6 @@
 class FathersController < ApplicationController
   before_action :set_father, only: %i[ show edit update destroy ]
+  before_action :set_occupations, only: %i[ create edit ]
 
   # GET /fathers or /fathers.json
   def index
@@ -66,5 +67,9 @@ class FathersController < ApplicationController
     # Only allow a list of trusted parameters through.
     def father_params
       params.require(:father).permit(:name, :cpf, :email, :occupation_id)
+    end
+
+    def set_occupations
+      @occupations = Occupation.all
     end
 end
