@@ -3,6 +3,15 @@
 <p>
   <strong>Name:</strong>
   <%= @father.name %>
+  <hr>
+
+  <ul>
+  <% @father.children.each do |child| %>
+    <li><%= "#{child.name} - #{child.sex}" %></li>
+  <% end%>
+  </ul>
+
+
 </p>
 
 <%= link_to 'Edit', edit_father_path(@father) %> |
