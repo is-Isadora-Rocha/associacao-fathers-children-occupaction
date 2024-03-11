@@ -7,7 +7,7 @@
 
   <ul>
   <% @father.children.each do |child| %>
-    <li><%= "#{child.name} - #{child.sex}" %></li>
+    <li><%= "#{child.name} - #{pegar_sexo(child.sex)}" %></li>
   <% end%>
   </ul>
 
