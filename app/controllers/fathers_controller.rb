@@ -65,6 +65,6 @@ class FathersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def father_params
-      params.require(:father).permit(:name)
+      params.require(:father).permit(:name, :cpf, :email, :occupation_id)
     end
 end
