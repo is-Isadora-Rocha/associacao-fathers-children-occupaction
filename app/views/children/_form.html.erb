@@ -14,16 +14,23 @@
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :child_name %>
+    
   </div>
 
   <div class="field">
     <%= form.label :sex %>
-    <%= form.text_field :sex, id: :child_sex %>
+    <%#= form.text_field :sex, id: :child_sex %>
+    <%= form.select(:sex, 
+              options_for_select([["Masculino", "M"], ["Feminino", "F"]], @child.sex), 
+              {include_blank: "Selecione"}) 
+    %>
   </div>
 
   <div class="field">
     <%= form.label :father_id %>
-    <%= form.text_field :father_id, id: :child_father_id %>
+    <%#= form.text_field :father_id, id: :child_father_id %>
+    <%= form.collection_select(:father_id, Father.all, :id, :name, include_blank: true) %>
+    
   </div>
 
   <div class="actions">
