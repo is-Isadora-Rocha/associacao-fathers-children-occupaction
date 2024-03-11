@@ -29,7 +29,7 @@
   <div class="field">
     <%= form.label :father_id %>
     <%#= form.text_field :father_id, id: :child_father_id %>
-    <%= form.collection_select(:father_id, Father.all, :id, :name, include_blank: true) %>
+    <%= form.collection_select(:father_id, @fathers, :id, :name, include_blank: true) %>
     
   </div>
 

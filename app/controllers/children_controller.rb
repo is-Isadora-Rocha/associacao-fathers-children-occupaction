@@ -1,5 +1,6 @@
 class ChildrenController < ApplicationController
   before_action :set_child, only: %i[ show edit update destroy ]
+  before_action :set_father, only: %i[ edit update new ]
 
   # GET /children or /children.json
   def index
@@ -13,10 +14,12 @@ class ChildrenController < ApplicationController
   # GET /children/new
   def new
     @child = Child.new
+    @fathers = Father.all
   end
 
   # GET /children/1/edit
   def edit
+    @fathers = Father.all
   end
 
   # POST /children or /children.json
@@ -66,5 +69,9 @@ class ChildrenController < ApplicationController
     # Only allow a list of trusted parameters through.
     def child_params
       params.require(:child).permit(:name, :sex, :father_id)
+    end
+
+    def set_father
+      @fathers = Father.all
     end
 end
