@@ -10,5 +10,6 @@ Child
 - sex:string
 - father_id:int
 
-`rails g scaffold Father name`
-`rails g scaffold Child name sex father:references`
+> `rails g scaffold Father name`
+
+> `rails g scaffold Child name sex father:references`
