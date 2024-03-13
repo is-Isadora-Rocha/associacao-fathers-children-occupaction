@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20240311184845) do
+ActiveRecord::Schema.define(version: 20240313174946) do
 
   create_table "children", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,10 @@ ActiveRecord::Schema.define(version: 20240311184845) do
     t.string "cpf"
     t.string "email"
     t.integer "occupation_id"
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["occupation_id"], name: "index_fathers_on_occupation_id"
   end
 
