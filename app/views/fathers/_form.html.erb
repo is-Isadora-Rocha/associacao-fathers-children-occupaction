@@ -1,4 +1,4 @@
-<%= form_with(model: father, local: true) do |form| %>
+<%= form_with(model: father, html: { multipart: true }) do |form| %>
   <% if father.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(father.errors.count, "error") %> prohibited this father from being saved:</h2>
@@ -10,6 +10,11 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="field">
+    <%= form.label :avatar %>
+    <%= form.file_field :avatar %>
+  </div>
 
   <div class="field">
     <%= form.label :name %>
@@ -26,10 +31,9 @@
     <%= form.text_field :email %>
   </div>
 
-    <div class="field">
+  <div class="field">
     <%= form.label :occupation_id %>
     <%= form.collection_select(:occupation_id, @occupations, :id, :description, include_blank: true) %>
-    
   </div>
 
   <div class="actions">

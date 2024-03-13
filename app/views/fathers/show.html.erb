@@ -13,6 +13,11 @@
   <strong>Occupation:</strong>
   <%= @father.occupation_description %>
   <hr>
+
+  <strong>Avatar:</strong>
+  <%= image_tag @father.avatar.url(:thumb) %>
+  <hr>
+  
 </p>
 
   <ul>
