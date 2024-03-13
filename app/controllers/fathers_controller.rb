@@ -1,6 +1,6 @@
 class FathersController < ApplicationController
   before_action :set_father, only: %i[ show edit update destroy ]
-  before_action :set_occupations, only: %i[ create edit ]
+  before_action :set_occupations, only: %i[ new update create edit ]
 
   # GET /fathers or /fathers.json
   def index
