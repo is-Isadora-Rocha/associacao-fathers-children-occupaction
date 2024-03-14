@@ -1,0 +1,18 @@
+<h1>Welcome!</h1>
+<p><%= link_to "Fathers", fathers_path %></p>
+<p><%= link_to "Children", children_path %></p>
+<p><%= link_to "Occupations", occupations_path %></p>
+
+<!-- 
+ANOTAÇÕES: 
+
+Em: http://localhost:3000/rails/info/routes#, na parte de Helper (Path / Url)
+
+occupation_path	GET	/occupations/:id(.:format) occupations#show <= no SINGULAR é o 'show'
+
+occupations_path	GET	/occupations(.:format)	occupations#index
+children_path	GET	/children(.:format)	children#index
+fathers_path	GET	/fathers(.:format)	fathers#index
+
+Portanto, o link_to se conecta as páginas index de cada controller
+-->
